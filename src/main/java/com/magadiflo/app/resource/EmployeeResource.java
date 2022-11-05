@@ -38,7 +38,8 @@ public class EmployeeResource {
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
+    public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee, @PathVariable Integer id) {
+        employee.setId(id);
         return ResponseEntity.ok(this.employeeService.updateEmployee(employee));
     }
 
