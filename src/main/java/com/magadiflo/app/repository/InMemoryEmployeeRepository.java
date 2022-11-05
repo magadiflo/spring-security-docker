@@ -18,8 +18,14 @@ public class InMemoryEmployeeRepository {
         DATA_BASE.add(new Employee(3, "Yumixsa", "Ramos", "yumixsa@gmail.com"));
     }
 
-    public void addEmployee(Employee employee) {
+    private static int getMaxId() {
+        return DATA_BASE.stream().mapToInt(Employee::getId).max().orElseThrow();
+    }
+
+    public Employee addEmployee(Employee employee) {
+        employee.setId(getMaxId() + 1);
         DATA_BASE.add(employee);
+        return employee;
     }
 
     public List<Employee> getAllEmployees() {
@@ -30,16 +36,17 @@ public class InMemoryEmployeeRepository {
         return DATA_BASE.stream().filter(employee -> employee.getId().equals(id)).findFirst().orElseThrow();
     }
 
-    public void updateEmployee(Employee employee) {
+    public Employee updateEmployee(Employee employee) {
         int indexOfElement = IntStream.range(0, DATA_BASE.size())
                 .filter(index -> DATA_BASE.get(index).getId().equals(employee.getId()))
                 .findFirst().orElseThrow();
         DATA_BASE.set(indexOfElement, employee);
+        return DATA_BASE.get(indexOfElement);
     }
 
     public Boolean deleteById(Integer id) {
-       Employee employee = DATA_BASE.stream().filter(emp -> emp.getId().equals(id)).findFirst().orElseThrow();
-       return DATA_BASE.remove(employee);
+        Employee employee = DATA_BASE.stream().filter(emp -> emp.getId().equals(id)).findFirst().orElseThrow();
+        return DATA_BASE.remove(employee);
     }
 
 }
