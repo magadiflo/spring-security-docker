@@ -2,7 +2,7 @@ package com.magadiflo.app.resource;
 
 import com.magadiflo.app.model.Employee;
 import com.magadiflo.app.service.EmployeeService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -10,12 +10,15 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
-@RequiredArgsConstructor
 @RestController
 @RequestMapping(path = "/api/employees")
 public class EmployeeResource {
 
     private final EmployeeService employeeService;
+
+    public EmployeeResource(@Qualifier(value = "jpaEmployeeServiceImpl") EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     private URI getLocation(Integer id) {
         return ServletUriComponentsBuilder.fromCurrentRequest().path("{id}").buildAndExpand(id).toUri();

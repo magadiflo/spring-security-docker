@@ -4,12 +4,14 @@ import com.magadiflo.app.model.Employee;
 import com.magadiflo.app.repository.InMemoryEmployeeRepository;
 import com.magadiflo.app.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @RequiredArgsConstructor
 @Service
+@Qualifier(value = "inMemoryEmployeeServiceImpl")
 public class InMemoryEmployeeServiceImpl implements EmployeeService {
 
     private final InMemoryEmployeeRepository inMemoryEmployeeRepository;

@@ -4,12 +4,14 @@ import com.magadiflo.app.model.Employee;
 import com.magadiflo.app.repository.IJpaEmployeeRepository;
 import com.magadiflo.app.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @RequiredArgsConstructor
 @Service
+@Qualifier(value = "jpaEmployeeServiceImpl")
 public class JpaEmployeeServiceImpl implements EmployeeService {
 
     private final IJpaEmployeeRepository jpaEmployeeRepository;
