@@ -1,5 +1,6 @@
 package com.magadiflo.app.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +24,10 @@ public class Account {
     @Column(unique = true)
     private String username;
 
+    // @JsonProperty, de esta forma, si exponemos esta entidad por el API hacía un cliente el password no se mostrará
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+
     private boolean enabled = true;
     private boolean credentialsExpired = false;
     private boolean expired = false;
