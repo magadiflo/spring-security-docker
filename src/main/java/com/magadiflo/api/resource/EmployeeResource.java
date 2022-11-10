@@ -1,7 +1,7 @@
-package com.magadiflo.app.resource;
+package com.magadiflo.api.resource;
 
-import com.magadiflo.app.model.Employee;
-import com.magadiflo.app.service.EmployeeService;
+import com.magadiflo.api.model.Employee;
+import com.magadiflo.api.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,6 @@
-package com.magadiflo.app.repository;
+package com.magadiflo.api.repository;
 
-import com.magadiflo.app.model.Employee;
+import com.magadiflo.api.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

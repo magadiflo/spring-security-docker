@@ -1,10 +1,10 @@
-package com.magadiflo.app.service.impl;
+package com.magadiflo.api.service.impl;
 
-import com.magadiflo.app.model.Account;
-import com.magadiflo.app.model.Role;
-import com.magadiflo.app.repository.IAccountRepository;
-import com.magadiflo.app.repository.IRoleRepository;
-import com.magadiflo.app.service.IAccountService;
+import com.magadiflo.api.model.Account;
+import com.magadiflo.api.model.Role;
+import com.magadiflo.api.repository.IAccountRepository;
+import com.magadiflo.api.repository.IRoleRepository;
+import com.magadiflo.api.service.IAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

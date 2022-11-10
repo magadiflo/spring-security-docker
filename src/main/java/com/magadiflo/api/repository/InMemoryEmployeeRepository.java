@@ -1,6 +1,6 @@
-package com.magadiflo.app.repository;
+package com.magadiflo.api.repository;
 
-import com.magadiflo.app.model.Employee;
+import com.magadiflo.api.model.Employee;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

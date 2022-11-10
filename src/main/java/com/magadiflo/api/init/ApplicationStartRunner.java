@@ -1,7 +1,7 @@
-package com.magadiflo.app.init;
+package com.magadiflo.api.init;
 
-import com.magadiflo.app.model.Role;
-import com.magadiflo.app.repository.IRoleRepository;
+import com.magadiflo.api.model.Role;
+import com.magadiflo.api.repository.IRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

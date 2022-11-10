@@ -1,7 +1,7 @@
-package com.magadiflo.app.service.impl;
+package com.magadiflo.api.service.impl;
 
-import com.magadiflo.app.model.Account;
-import com.magadiflo.app.service.IAccountService;
+import com.magadiflo.api.model.Account;
+import com.magadiflo.api.service.IAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

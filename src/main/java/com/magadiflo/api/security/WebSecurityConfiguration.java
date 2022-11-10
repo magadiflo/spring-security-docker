@@ -1,4 +1,4 @@
-package com.magadiflo.app.security;
+package com.magadiflo.api.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

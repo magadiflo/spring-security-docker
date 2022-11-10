@@ -1,7 +1,7 @@
-package com.magadiflo.app.resource;
+package com.magadiflo.api.resource;
 
-import com.magadiflo.app.model.Account;
-import com.magadiflo.app.service.IAccountService;
+import com.magadiflo.api.model.Account;
+import com.magadiflo.api.service.IAccountService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

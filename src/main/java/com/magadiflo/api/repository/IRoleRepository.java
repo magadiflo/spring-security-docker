@@ -1,6 +1,6 @@
-package com.magadiflo.app.repository;
+package com.magadiflo.api.repository;
 
-import com.magadiflo.app.model.Role;
+import com.magadiflo.api.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IRoleRepository extends JpaRepository<Role, Long> {

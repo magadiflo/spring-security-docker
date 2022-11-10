@@ -1,8 +1,8 @@
-package com.magadiflo.app.service.impl;
+package com.magadiflo.api.service.impl;
 
-import com.magadiflo.app.model.Employee;
-import com.magadiflo.app.repository.InMemoryEmployeeRepository;
-import com.magadiflo.app.service.EmployeeService;
+import com.magadiflo.api.model.Employee;
+import com.magadiflo.api.repository.InMemoryEmployeeRepository;
+import com.magadiflo.api.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

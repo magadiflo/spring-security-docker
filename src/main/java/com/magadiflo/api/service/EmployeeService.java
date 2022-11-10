@@ -1,6 +1,6 @@
-package com.magadiflo.app.service;
+package com.magadiflo.api.service;
 
-import com.magadiflo.app.model.Employee;
+import com.magadiflo.api.model.Employee;
 
 import java.util.List;
 
