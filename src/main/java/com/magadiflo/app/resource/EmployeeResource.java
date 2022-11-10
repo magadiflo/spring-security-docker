@@ -20,7 +20,7 @@ public class EmployeeResource {
         this.employeeService = employeeService;
     }
 
-    private URI getLocation(Integer id) {
+    protected static URI getLocation(Integer id) {
         return ServletUriComponentsBuilder.fromCurrentRequest().path("{id}").buildAndExpand(id).toUri();
     }
 
