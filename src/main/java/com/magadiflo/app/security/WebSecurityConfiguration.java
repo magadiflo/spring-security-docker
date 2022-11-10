@@ -26,10 +26,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfiguration {
 
+    private final AccountAuthenticationProvider authenticationProvider; // Viene de la clase de componente AccountAuthenticationProvider
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
-        authenticationManagerBuilder.authenticationProvider(null); //Definimos un proveedor de autenticación (por ahora no tenemos definido)
+        authenticationManagerBuilder.authenticationProvider(this.authenticationProvider); //Definimos un proveedor de autenticación
 
         http.csrf().disable();
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/accounts/**").permitAll();
