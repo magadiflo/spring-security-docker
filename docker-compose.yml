@@ -20,6 +20,26 @@ services:
     networks:
       - apinetwork
 
-  networks:
-    apinetwork:
-      driver: bridge
+  apiapplication:
+    container_name: apiapplicationcontainer
+    build: .
+    image: apiapplication:v1
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/bd_spring_security_docker
+      SPRING_DATASOURCE_USERNAME: 'admin'
+      SPRING_DATASOURCE_PASSWORD: 'magadiflo'
+      SERVICE_TAGS: prod
+      SERVICE_NAME: springapi
+      depends_on:
+        - mysqldb
+    networks:
+      - apinetwork
+
+networks:
+  apinetwork:
+    driver: bridge
