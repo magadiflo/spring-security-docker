@@ -35,7 +35,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: 'magadiflo'
       SERVICE_TAGS: prod
       SERVICE_NAME: springapi
-      depends_on:
+    depends_on:
         - mysqldb
     networks:
       - apinetwork
